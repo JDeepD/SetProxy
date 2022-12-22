@@ -1,0 +1,28 @@
+{
+  "profiles": [
+    {
+      "name": "&Hostel",
+      "nickname": "h8",
+      "proxyserver": "http://172.16.199.40",
+      "proxyport": "8080"
+    },
+    {
+      "name": "&Library",
+      "nickname": "lib",
+      "proxyserver": "http://172.16.199.20",
+      "proxyport": "8080"
+    },
+    {
+      "name": "&9-Hostel9",
+      "nickname": "h9",
+      "proxyserver": "http://172.16.199.41",
+      "proxyport": "8080"
+    },
+    {
+      "proxyport": "8080",
+      "proxyserver": "http://172.16.199.40",
+      "nickname": "cs23",
+      "name": "&CS23 Lab"
+    }
+  ]
+}
