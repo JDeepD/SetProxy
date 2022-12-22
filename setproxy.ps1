@@ -1,6 +1,6 @@
 $unset = New-Object System.Management.Automation.Host.ChoiceDescription '&Unset', ''
 [System.Management.Automation.Host.ChoiceDescription[]]$options = ($unset)
-$proxyserverspath = "$HOME\OneDrive\Documents\scripts\proxyservers.json"
+$proxyserverspath = "$PSScriptRoot\proxyservers.json"
 if (!(Test-Path $proxyserverspath)){
 	Write-Output "$proxyserverspath not found..."
 	Write-Output "Creating $proxyserverspath"

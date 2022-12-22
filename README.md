@@ -2,6 +2,17 @@
 
 ### Set proxy configs for tools like git, npm with just a single command.
 
+
+## Installation:
+
+#### 1. Manual Installation
+
+Clone the repository
+```
+git clone https://github.com/JDeepD/SetProxy.git
+```
+Add the cloned directory to `$PATH`
+
 ## Commands:
 
 #### Create a profile
