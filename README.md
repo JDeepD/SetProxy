@@ -11,7 +11,9 @@ Clone the repository
 ```
 git clone https://github.com/JDeepD/SetProxy.git
 ```
-Add the cloned directory to `$PATH`
+
+Run `install.ps1`
+
 
 ## Commands:
 

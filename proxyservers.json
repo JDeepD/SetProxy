@@ -17,12 +17,6 @@
       "nickname": "h9",
       "proxyserver": "http://172.16.199.41",
       "proxyport": "8080"
-    },
-    {
-      "proxyport": "8080",
-      "proxyserver": "http://172.16.199.40",
-      "nickname": "cs23",
-      "name": "&CS23 Lab"
     }
   ]
 }
