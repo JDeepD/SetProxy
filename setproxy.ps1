@@ -10,11 +10,6 @@ $JsonProfiles = Get-Content -Raw $proxyserverspath | ConvertFrom-Json
 $argv=$args[0]
 $nicks = @{};
 
-# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 0
-# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 1
-# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyOverride -Value "localhost;127.*;10.*"
-# Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name 'ProxyServer' -Value 'proxy_address:port'
-
 function setproxy($proxyserver){
 	Write-Output 'Setting Proxy to' $proxyserver;
 	Write-Output 'Setting git proxy...';
