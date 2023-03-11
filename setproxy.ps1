@@ -22,6 +22,7 @@ function setproxy($proxyserver){
 	Write-Output 'Setting Windows Proxy...';
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyServer' -Value $proxyserver;
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyEnable' -Value 1;
+	sudo netsh winhttp set proxy $proxyserver;
 	Write-Output 'Done...';
 }
 
@@ -35,6 +36,7 @@ function unsetproxy{
 	Write-Output 'Done...';
 	Write-Output 'Unsetting Windows Proxy...';
 	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name 'ProxyEnable' -Value 0;
+	sudo netsh winhttp reset proxy
 	Write-Output 'Done...';
 }
 
@@ -107,7 +109,7 @@ else{
 	Write-Output "No proxy server found. Choose from below: ";
 	forEach($profile in $JsonProfiles.profiles){
 		$options += New-Object System.Management.Automation.Host.ChoiceDescription $profile.name, ($profile.proxyserver + ":" + $profile.proxyport)
-}
+	}
 	setproxyinteractive;
 	exit;
 }
