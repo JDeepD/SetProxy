@@ -2,8 +2,9 @@
 
 ### Set proxy configs for tools like git, npm with just a single command.
 
-
 ## Installation:
+
+## Pre-requisites: [Powershell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
 
 #### 1. Manual Installation
 
