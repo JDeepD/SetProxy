@@ -14,6 +14,16 @@ git clone https://github.com/JDeepD/SetProxy.git
 
 Run `install.ps1`
 
+```
+pwsh .\install.ps1
+```
+
+To update the tool, pull all the changes and run: 
+
+```
+pwsh .\install.ps1 -update
+```
+
 
 ## Commands:
 

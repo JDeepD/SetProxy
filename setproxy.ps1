@@ -27,6 +27,7 @@ function setproxy($proxyserver){
 	Write-Output 'Setting Windows Proxy...';
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyServer' -Value $proxyserver;
 	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyEnable' -Value 1;
+	Write-Output 'Done...';
 }
 
 function unsetproxy{
@@ -39,6 +40,7 @@ function unsetproxy{
 	Write-Output 'Done...';
 	Write-Output 'Unsetting Windows Proxy...';
 	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name 'ProxyEnable' -Value 0;
+	Write-Output 'Done...';
 }
 
 function create{
