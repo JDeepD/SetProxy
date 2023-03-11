@@ -10,6 +10,11 @@ $JsonProfiles = Get-Content -Raw $proxyserverspath | ConvertFrom-Json
 $argv=$args[0]
 $nicks = @{};
 
+# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 0
+# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 1
+# Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyOverride -Value "localhost;127.*;10.*"
+# Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name 'ProxyServer' -Value 'proxy_address:port'
+
 function setproxy($proxyserver){
 	Write-Output 'Setting Proxy to' $proxyserver;
 	Write-Output 'Setting git proxy...';
@@ -17,8 +22,11 @@ function setproxy($proxyserver){
 	git config --global https.proxy $proxyserver;
 	Write-Output 'Done...';
 	Write-Output 'Setting npm proxy...';
-	npm config set proxy $proxyserver;
+	npm config set -g proxy $proxyserver;
 	Write-Output 'Done...';
+	Write-Output 'Setting Windows Proxy...';
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyServer' -Value $proxyserver;
+	Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name 'ProxyEnable' -Value 1;
 }
 
 function unsetproxy{
@@ -27,8 +35,10 @@ function unsetproxy{
 	git config --global --unset https.proxy;
 	Write-Output 'Done...';
 	Write-Output 'Unsetting npm proxy vars...'
-	npm config rm proxy;
+	npm config rm -g proxy;
 	Write-Output 'Done...';
+	Write-Output 'Unsetting Windows Proxy...';
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings' -Name 'ProxyEnable' -Value 0;
 }
 
 function create{
@@ -55,7 +65,7 @@ function create{
 
 function setproxyinteractive{
 	$title = 'Select Proxy Server: '
-	$message = 'Configure Proxies for: npm, git'
+	$message = 'Configure Proxies for: npm, git, windows'
 	$result = $host.ui.PromptForChoice($title, $message, $options, 0)
 	if($result -eq 0){
 		unsetproxy;
