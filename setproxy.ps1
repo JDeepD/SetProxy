@@ -40,9 +40,18 @@ function unsetproxy{
 	Write-Output 'Done...';
 }
 
+function fzflist($JsonProfiles){
+  $output=""
+	forEach($profile in $JsonProfiles.profiles){
+		$output+=$profile.nickname + " " + ($profile.name).Substring(1) + " " + $profile.proxyserver+":"+$profile.proxyport + "`n"
+	}
+  $output+="unset" + " " + "Remove all proxy configs"
+  Write-Output $output
+}
+
 function create{
 	$name = Read-Host "Enter a Name for Profile"
-	if ($name -in ("create", "list", "unset")){
+	if ($name -in ("create", "list", "unset", "fzflist")){
 		Write-Output "Cannot use reserved keywords for profile names"
 		exit;
 	}
@@ -99,6 +108,10 @@ elseif($argv -eq "list"){
 	forEach($profile in $JsonProfiles.profiles){
 		Write-Output $profile
 	}
+	exit;
+}
+elseif($argv -eq "fzflist"){
+  fzflist($JsonProfiles);
 	exit;
 }
 elseif($argv -eq "create"){

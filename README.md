@@ -51,4 +51,17 @@ setproxy
 setproxy unset
 ```
 
+## Plus Tip: Use setproxy with [fzf](https://github.com/junegunn/fzf) for an even smoother experience.
+
+##### Put this in your `$PROFILE` (Powershell 7)
+
+```ps1
+function fpx{
+    $selection=$(setproxy fzflist | fzf --height 40% --pointer=' ' --border --info=inline --prompt='▶ ' --color=fg+:#FFFFFF,bg+:#FF0000,gutter:-1 --exact) -split '\s+' | Select-Object -First 1;
+    setproxy $selection
+}
+```
+
+And run `fpx` to witness sorcery.
+
 ### Inspired from [proxyman](https://github.com/himanshub16/ProxyMan) and [nits-proxy](https://github.com/resyfer/nits_proxy)
