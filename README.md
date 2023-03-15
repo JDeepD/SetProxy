@@ -70,7 +70,7 @@ https://user-images.githubusercontent.com/64089730/225298255-34f6bd21-9687-46e9-
 
 ---
 
-## TODO (based on feedback)
+## TODO
 - [ ] Make installation procedure smoother (preferably through package managers like winget or scoop)
 - [ ] Convert to Powershell module which allows easy installation an updates
 - [ ] Support for proxy bypasses
@@ -78,3 +78,13 @@ https://user-images.githubusercontent.com/64089730/225298255-34f6bd21-9687-46e9-
 - [ ] (maybe) Integrate tightly with fzf so that it does not have 2 different interfaces
 - [ ] (maybe) An cross-platform Proxy manager which works for both Windows and Unix based systems
 - [ ] (maybe) A GUI tool for managing proxy configurations
+
+## Feedback
+- [ ] Integrate tightly with fzf so that it does not have 2 different interfaces
+- [ ] An cross-platform Proxy manager which works for both Windows and Unix based systems
+- [ ] A GUI tool for managing proxy configurations
+- [ ] update pulled from git by itself
+- [ ] there was some ability to make a new shell with the proxy settings applied so that it doesnt interfere with globals (probs wouldnt work for windows networking but for the other two it would be nice)
+- [ ] could specify the commands to run in the config (could add more apps etc)
+
+
