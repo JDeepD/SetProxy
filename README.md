@@ -64,4 +64,10 @@ function fpx{
 
 And run `fpx` to witness sorcery.
 
+
+
+https://user-images.githubusercontent.com/64089730/225298255-34f6bd21-9687-46e9-b214-23c5e44d12e3.mp4
+
+
+
 ### Inspired from [proxyman](https://github.com/himanshub16/ProxyMan) and [nits-proxy](https://github.com/resyfer/nits_proxy)
