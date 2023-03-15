@@ -53,7 +53,7 @@ setproxy unset
 
 ## Plus Tip: Use setproxy with [fzf](https://github.com/junegunn/fzf) for an even smoother experience.
 
-##### Put this in your `$PROFILE` (Powershell 7)
+### Put this in your `$PROFILE` (Powershell 7)
 
 ```ps1
 function fpx{
@@ -62,12 +62,18 @@ function fpx{
 }
 ```
 
-And run `fpx` to witness sorcery.
-
-
+### And run `fpx` to witness sorcery.
 
 https://user-images.githubusercontent.com/64089730/225298255-34f6bd21-9687-46e9-b214-23c5e44d12e3.mp4
 
-
-
 ### Inspired from [proxyman](https://github.com/himanshub16/ProxyMan) and [nits-proxy](https://github.com/resyfer/nits_proxy)
+
+---
+
+## TODO (based on feedback)
+- [ ] Make installation procedure smoother (preferably through package managers like winget or scoop)
+- [ ] Convert to Powershell module which allows easy installation an updates
+- [ ] Support for proxy bypasses
+- [ ] (maybe) Integrate tightly with fzf so that it does not have 2 different interfaces
+- [ ] (maybe) An cross-platform Proxy manager which works for both Windows and Unix based systems
+- [ ] (maybe) A GUI tool for managing proxy configurations
